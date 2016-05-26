@@ -6,7 +6,7 @@ import com.dkriesel.snipe.training.TrainingSampleLesson;
 
 public class NeuronalTest {
 
-	private static double alpha = 0.001;
+	private static double alpha = 0.01;
 
 	public static void main(String[] args) {
 		NeuralNetworkDescriptor desc = new NeuralNetworkDescriptor(4, 2, 4);
@@ -17,9 +17,33 @@ public class NeuronalTest {
 		int sizeEach;
 		int longness;
 
-		double[][] input = {
+		int countriesSize = 6;
 
-		};
+		double[][] countries = new double[3][countriesSize];
+
+		for (int j = countries.length; j <= 0; j--) {
+			double[] countryJ = new double[countriesSize];
+			countries[j] = countryJ;
+
+			for (int i = 0; i < countries[j].length; i++) {
+				double value;
+				if (j != 0) {
+					if (i == j) {
+						value = 1.0;
+					} else {
+						value = 0.0;
+					}	
+				} else {
+					value = -1.0;
+				}
+				
+				countries[j][i] = value;
+			}
+		}
+		
+		System.out.println(countries);
+		
+		/*
 
 		double[][] exspectedOutput = {
 
@@ -33,7 +57,7 @@ public class NeuronalTest {
 		// }
 
 		TrainingSampleLesson lession1 = new TrainingSampleLesson(input, exspectedOutput);
-		net.trainBackpropagationOfError(lession1, 100, alpha);
+		net.trainBackpropagationOfError(lession1, 100, alpha);*/
 
 	}
 }
