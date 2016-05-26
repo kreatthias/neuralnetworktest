@@ -1,0 +1,15 @@
+$ cat .gitignore
+
+# ignore java class files
+*.class
+
+# ignore binary/compiled files
+*.[oa]
+
+# ignore temporary files
+*~
+/bin/
+
+.classpath
+.project
+.settings/
